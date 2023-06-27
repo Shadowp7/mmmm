@@ -1,0 +1,33 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: palevioletred;
+}
+.class{
+    background-color: black;
+    color:aliceblue;
+}
+.class p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(162, 99, 218);
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.pie button{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    width: 150px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+.yb{
+    position: fixed;
+    bottom:0;
+    color: cornflowerblue;
+    width: 100%;
+    font-size: 18px;
+    background-color: indianred;
+    line-height: 3;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+}

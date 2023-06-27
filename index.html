@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Let's Chat Web App</title>
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="kwitter.js"></script>
+</head>
+<body>
+<center>
+	<h1 class="header">	
+		Let's Chat Web App	<sup>
+	<img src="data:image/png;base64,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">
+	</sup>
+</h1>
+	<div class="col-lg-4 col-md-6 col-sm-6 col-xs-11 login_div">
+	<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/iOS/ios16-iphone13-pro-messages-edit-unsend-message.png" class="logo">
+		<h3 >See what is happening in the world rn</h3>
+		<h4 >Join Let's Chat Web App today</h4>
+		<div class="form-group">
+		  <label >User Name:</label>
+		  <input type="text" id="user_name" class="form-control" placeholder="User Name">
+
+		</div>
+		<button id="login_button" class="btn btn-sucess" onclick="addUser()">Log in</button>
+		<br><br>
+	</div>
+</center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+ 
+
